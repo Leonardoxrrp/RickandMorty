@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.container .btn {
+    position: absolute;
+    top: 74%;
+    left: auto;
+}
+
+.wallpaperdesktop {
+    width: auto;
+    height: 100vh;
+}
+.wallpaperphone {
+    width: auto;
+    height: 100vh;
+}
+
+
+@media (max-width: 768px) {
+    .wallpaperdesktop {
+        display: none;
+    }
+    .container .btn  {
+        top: 80%;
+    }
+}
+
+@media (min-width: 768px) {
+    .wallpaperphone {
+        display: none;
+    }
+}
+.btn {
+    align-items: flex-end;
+}
