@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+import Card from "../components/Card"
 
-class Layout extends Component {
+class Cardslist extends Component {
     render() {
         return (
             <div>
-                
+                <Card />
             </div>
         )
     }
 }
 
-export default Layout;
+export default Cardslist;

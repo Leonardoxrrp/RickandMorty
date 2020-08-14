@@ -4,7 +4,20 @@
     justify-content: center;
     position: relative;
 }
-.container .btn {
+.container .title{
+    color: white;
+    border-bottom: 1px solid white;
+    position: absolute;
+    top: 5%;
+    left: auto;
+}
+.container .subtitle{
+    color: white;
+    position: absolute;
+    top: 15%;
+    left: auto;
+}
+.container .btn {   
     position: absolute;
     top: 74%;
     left: auto;
