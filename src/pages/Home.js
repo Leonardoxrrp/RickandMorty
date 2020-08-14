@@ -7,7 +7,7 @@ class Home extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="container">
+                <div className="home-container">
                     <h1 className="title">Rick and Morty</h1>
                     <h5 className="subtitle">Fetch all characters from the series !</h5>
                     <img src={wallpaperphone} className="wallpaperphone" />
