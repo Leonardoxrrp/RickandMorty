@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from "../src/pages/Home";
-import Name from "../src/pages/Name"
+import List from "../src/pages/List"
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
     <Switch>  
       <Route exact path="/" component={Home}/>
-      <Route exact path="/Name" component={Name}/>
+      <Route exact path="/List" component={List}/>
     </Switch>
     </BrowserRouter>
   );

@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import "../styles/name.css"
+import Card from "../components/Card"
 
-class Name extends Component {
+class List extends Component {
     render() {
         return (
-            <div className="Name-container">
+            <div className="List-container">
                 {/* I would like to have a transition before getting to this page. */}
+                <Card />
             </div>
         )
     }
 }
-export default Name;
+export default List;

@@ -12,7 +12,7 @@ class Home extends Component {
                     <h5 className="subtitle">Fetch all characters from the series !</h5>
                     <img src={wallpaperphone} className="wallpaperphone" />
                     <img src={wallpaperdesktop} className="wallpaperdesktop" />
-                    <Link to="/Name" className="btn btn-success">Let's start</Link>
+                    <Link to="/List" className="btn btn-success">Let's start</Link>
                 </div>
         )
     }
