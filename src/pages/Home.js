@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import wallpaperdesktop from "../images/wallpaperdesktop.jpg"
-import wallpaperphone from "../images/wallpaperphone.png"
+import wallpaperphone from "../images/wallpaperphone.jpg"
 import {Link} from "react-router-dom"
 import "../styles/home.css"
 

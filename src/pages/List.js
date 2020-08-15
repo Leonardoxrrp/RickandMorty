@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import Card from "../components/Card"
+import "../styles/list.css"
 
 class List extends Component {
     render() {
         return (
-            <div className="List-container">
-                {/* I would like to have a transition before getting to this page. */}
-                <Card />
-            </div>
+         <Card/>
         )
     }
 }
