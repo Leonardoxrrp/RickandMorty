@@ -22,19 +22,32 @@ class List extends Component {
 
         } catch (error) {
             console.log(error)
-            this.setState({loading: false})
+            this.setState({ loading: false })
         }
 
     }
 
     render() {
         return (
-
             <React.Fragment>
-                <div className="navbar"></div>
-                <h1>List page</h1>
+                <div className="header-container">
+                    <div className="container">
+                        <h1>Rick and Morty</h1>
+      
+                    </div>
+                </div>
+                <div className="body-container">
 
                 <div className="container">
+                    <div className="row">
+                    {!this.state.loading && (
+                            <div className="buttons-container">
+                                <button className="btn btn-dark previous">Previous</button>
+                                <button className="btn btn-dark next">Next</button>
+                            </div>
+
+                        )}
+                    </div>
                     <div className="row">
                         {this.state.character.map(character =>
                             <div className="card col-12 col-md-6 col-lg-4 col-xl-3">
@@ -50,9 +63,13 @@ class List extends Component {
                         )}
 
                     </div>
-                    {this.state.loading && <Loader />}
+                    <div className="loader">
+                        {this.state.loading && <Loader />}
+                    </div>
 
                 </div>
+                </div>
+               
 
             </React.Fragment>
         )

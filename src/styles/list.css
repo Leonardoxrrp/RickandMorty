@@ -1,3 +1,4 @@
+
 .card {
     border: 1px solid yellow;
 
@@ -5,4 +6,18 @@
 
 .card .card-name {
     border-bottom: 1px solid black;
+}
+.header-container {
+    text-align: center;
+}
+.buttons-container{
+    display: flex;
+}
+.next {
+    margin-left: auto;
+}
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
