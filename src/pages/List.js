@@ -1,51 +1,58 @@
 import React, { Component } from 'react'
-import "spinkit/spinkit.min.css"
+import Loader from "../components/Loader"
+import "../styles/list.css"
 
 class List extends Component {
     state = {
         loading: true,
-        character: []
+        character: [],
     }
+
     componentDidMount() {
         this.fetchCharacter()
     }
     fetchCharacter = async () => {
-        const response = await fetch("https://rickandmortyapi.com/api/character/")
-        const data = await response.json()
+        try {
+            const response = await fetch("https://rickandmortyapi.com/api/character/")
+            const data = await response.json()
+            this.setState({
+                character: data.results,
+                loading: false,
+            })
 
-        this.setState({
-            character: data.results,
-            loading: true
-        })
+        } catch (error) {
+            console.log(error)
+            this.setState({loading: false})
+        }
+
     }
 
     render() {
         return (
 
             <React.Fragment>
+                <div className="navbar"></div>
                 <h1>List page</h1>
 
-                {/* <div className="container">
+                <div className="container">
                     <div className="row">
                         {this.state.character.map(character =>
-                            <div className="card col-3">
+                            <div className="card col-12 col-md-6 col-lg-4 col-xl-3">
                                 <img className="card-img-top" src={character.image} alt="Card image" />
                                 <div className="card-body">
-                                    <h4 className="card-title">{character.name}</h4>
-                                    <p className="card-text">{character.species}.</p>
+                                    <h5 className="card-title card-name">{character.name}</h5>
+                                    {character.status === "Alive" && (<h5 className="card-text badge badge-success">Alive</h5>)}
+                                    {character.status === "Dead" && (<h5 className="card-text badge badge-danger ">Dead</h5>)}
+                                    {character.status === "unknown" && (<h5 className="card-text badge badge-dark">Unknown</h5>)}
+                                    <p className="card-text badge badge-light">{character.species}.</p>
                                 </div>
                             </div>
                         )}
 
                     </div>
-                </div> */}
-                {this.state.loading && (
+                    {this.state.loading && <Loader />}
 
-                    <div class="sk-swing">
-                        <div class="sk-swing-dot"></div>
-                        <div class="sk-swing-dot"></div>
-                    </div>
-                )}
+                </div>
 
             </React.Fragment>
         )
