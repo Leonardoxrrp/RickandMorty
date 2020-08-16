@@ -6,18 +6,21 @@ class List extends Component {
     state = {
         loading: true,
         character: [],
+        page: 1,
     }
 
     componentDidMount() {
         this.fetchCharacter()
     }
     fetchCharacter = async () => {
+        this.setState({loading:true})
         try {
-            const response = await fetch("https://rickandmortyapi.com/api/character/")
+            const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${this.state.page}`)
             const data = await response.json()
             this.setState({
                 character: data.results,
                 loading: false,
+                page: this.state.page +1,
             })
 
         } catch (error) {
@@ -26,26 +29,26 @@ class List extends Component {
         }
 
     }
-
     render() {
         return (
             <React.Fragment>
                 <div className="header-container">
                     <div className="container">
+                        <div className="title">
                         <h1>Rick and Morty</h1>
-      
+                        </div>
                     </div>
                 </div>
                 <div className="body-container">
-
                 <div className="container">
-                    <div className="row">
-                    {!this.state.loading && (
-                            <div className="buttons-container">
-                                <button className="btn btn-dark previous">Previous</button>
-                                <button className="btn btn-dark next">Next</button>
-                            </div>
-
+                    <div className="row buttons-container">
+                    {this.state.loading === false &&
+                    
+                    (
+                           <React.Fragment>
+                                <button className="btn btn-success previous">Previous</button>
+                                <button onClick={this.fetchCharacter} className="btn btn-success next">Next</button>
+                            </React.Fragment>
                         )}
                     </div>
                     <div className="row">

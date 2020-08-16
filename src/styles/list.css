@@ -1,3 +1,8 @@
+.body-container {
+    display: flex;
+    flex-direction: column;  
+    margin-top: 80px;
+}
 
 .card {
     border: 1px solid yellow;
@@ -7,14 +12,17 @@
 .card .card-name {
     border-bottom: 1px solid black;
 }
+h1 {
+    border-bottom: 1px solid black;
+}
 .header-container {
     text-align: center;
 }
 .buttons-container{
     display: flex;
 }
-.next {
-    margin-left: auto;
+.previous {
+    margin-right: auto;
 }
 .loader {
     display: flex;
