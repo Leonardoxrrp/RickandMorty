@@ -20,7 +20,7 @@ class List extends Component {
             this.setState({
                 character: data.results,
                 loading: false,
-                page: this.state.page +1,
+                page: this.state.page + 1,
             })
 
         } catch (error) {
@@ -46,7 +46,7 @@ class List extends Component {
                     
                     (
                            <React.Fragment>
-                                <button className="btn btn-success previous">Previous</button>
+                                <button className="btn btn-success previous">Not working :(</button>
                                 <button onClick={this.fetchCharacter} className="btn btn-success next">Next</button>
                             </React.Fragment>
                         )}
