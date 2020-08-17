@@ -20,7 +20,8 @@ class List extends Component {
             this.setState({
                 character: data.results,
                 loading: false,
-                page: this.state.page + 1,
+                page: this.state.page +1,
+
             })
 
         } catch (error) {
@@ -42,18 +43,20 @@ class List extends Component {
                 <div className="body-container">
                 <div className="container">
                     <div className="row buttons-container">
-                    {this.state.loading === false &&
+                    {this.state.loading === false && this.state.page > 1 &&
                     
                     (
-                           <React.Fragment>
-                                <button className="btn btn-success previous">Not working :(</button>
-                                <button onClick={this.fetchCharacter} className="btn btn-success next">Next</button>
-                            </React.Fragment>
+                    <button onClick={()=> this.fetchCharacter()} className="btn btn-success previous">Previous</button>
                         )}
+                 {this.state.loading === false &&
+                    (
+                    <button onClick={()=> this.fetchCharacter()} className="btn btn-success next">Next</button>
+                        )}
+
                     </div>
                     <div className="row">
                         {this.state.character.map(character =>
-                            <div className="card col-12 col-md-6 col-lg-4 col-xl-3">
+                            <div className="card col-12 col-md-6 col-lg-4 col-xl-3" key={character.id}>
                                 <img className="card-img-top" src={character.image} alt="Card image" />
                                 <div className="card-body">
                                     <h5 className="card-title card-name">{character.name}</h5>

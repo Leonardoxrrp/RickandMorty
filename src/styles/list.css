@@ -21,6 +21,9 @@ h1 {
 .buttons-container{
     display: flex;
 }
+.next {
+    margin-left: auto;
+}
 .previous {
     margin-right: auto;
 }
