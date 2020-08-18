@@ -8,20 +8,27 @@ class List extends Component {
         character: [],
         page: 1,
     }
-
     componentDidMount() {
         this.fetchCharacter()
     }
-    fetchCharacter = async () => {
+    fetchCharacter = async (type) => {
         this.setState({loading:true})
+        let typeValue = 1;
+
+        if (type === 1) {
+            typeValue = this.state.page +1;
+        }
+        else if (type === 0) {
+            typeValue = this.state.page -1;
+
+        }
         try {
-            const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${this.state.page}`)
+            const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${typeValue}`)
             const data = await response.json()
             this.setState({
                 character: data.results,
                 loading: false,
-                page: this.state.page +1,
-
+                page: typeValue,
             })
 
         } catch (error) {
@@ -46,11 +53,11 @@ class List extends Component {
                     {this.state.loading === false && this.state.page > 1 &&
                     
                     (
-                    <button onClick={()=> this.fetchCharacter()} className="btn btn-success previous">Previous</button>
+                    <button onClick={()=> this.fetchCharacter(0)} className="btn btn-success previous">Previous</button>
                         )}
                  {this.state.loading === false &&
                     (
-                    <button onClick={()=> this.fetchCharacter()} className="btn btn-success next">Next</button>
+                    <button onClick={()=> this.fetchCharacter(1)} className="btn btn-success next">Next</button>
                         )}
 
                     </div>
