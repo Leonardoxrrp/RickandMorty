@@ -66,7 +66,7 @@ class List extends Component {
                         <div className="row">
                             {this.state.character.map(character =>
                                 <div className="card col-12 col-md-6 col-lg-4 col-xl-3" key={character.id}>
-                                    <img className="card-img-top" src={character.image} alt="Card image" />
+                                    <img className="card-img-top" src={character.image} alt={character.name} />
                                     <div className="card-body">
                                         <h5 className="card-title card-name">{character.name}</h5>
                                         {character.status === "Alive" && (<h5 className="card-text badge badge-success">Alive</h5>)}
