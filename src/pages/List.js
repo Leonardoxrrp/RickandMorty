@@ -63,7 +63,7 @@ class List extends Component {
                                 )}
 
                         </div>
-                        <div className="row">
+                        <div className="row no-gutters card-container">
                             {this.state.character.map(character =>
                                 <div className="card col-12 col-md-6 col-lg-4 col-xl-3" key={character.id}>
                                     <img className="card-img-top" src={character.image} alt={character.name} />

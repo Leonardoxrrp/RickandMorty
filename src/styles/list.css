@@ -7,6 +7,19 @@
 .card .card-name {
     border-bottom: 1px solid black;
 }
+/* .card-container {
+    border: 1px solid black;
+    box-shadow: 5px 8px;
+
+} */
+.card-body {
+    border: 2px solid black;
+
+}
+.card-img-top {
+    border: 3px solid black;
+
+}
 
 h1 {
     color: white;
