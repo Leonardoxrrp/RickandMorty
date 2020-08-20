@@ -9,7 +9,7 @@ class List extends Component {
         page: 1,
     }
 
-    typeValue= 0; 
+    typeValue;
 
     componentDidMount() {
         this.fetchCharacter()
