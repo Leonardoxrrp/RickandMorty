@@ -8,29 +8,30 @@ class List extends Component {
         character: [],
         page: 1,
     }
+
+    typeValue= 0; 
+
     componentDidMount() {
         this.fetchCharacter()
     }
     fetchCharacter = async (type) => {
-        let typeValue = 1;
-        this.setStae=({loading: true})
-
+        this.typeValue = 1; 
         if (type === 1) {
-            typeValue = this.state.page + 1;
+            this.typeValue = this.state.page + 1; 
         }
         else if (type === 0) {
-            typeValue = this.state.page - 1;
+            this.typeValue = this.state.page - 1; 
 
         }
-        this.setState({loading: true})
+        this.setState({ loading: true })
         try {
-                const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${typeValue}`)
-                const data = await response.json()
-                this.setState({
-                    character: data.results,
-                    loading: false,
-                    page: typeValue,
-                }) 
+            const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${this.typeValue}`)
+            const data = await response.json()
+            this.setState({
+                character: data.results,
+                loading: false,
+                page: this.typeValue,
+            })
 
         } catch (error) {
             console.log(error)
@@ -54,12 +55,12 @@ class List extends Component {
                             {this.state.page > 1 &&
 
                                 (
-                                    <button onClick={() => this.fetchCharacter(0)} className="btn btn-success previous">Previous</button>
+                                    <button onClick={() => this.fetchCharacter(0)} className="btn btn-dark previous">Previous Page</button>
                                 )}
-                                    <p className="pageNumber">Page: {this.state.page}</p>
-                            {this.state.loading === false && this.state.page <34 &&
+                            <p className="pageNumber">Page: {this.state.page}</p>
+                            {this.state.page < 34 &&
                                 (
-                                    <button onClick={() => this.fetchCharacter(1)} className="btn btn-success next">Next</button>
+                                    <button onClick={() => this.fetchCharacter(1)} className="btn btn-dark next">Next Page</button>
                                 )}
 
                         </div>
@@ -80,10 +81,10 @@ class List extends Component {
                         </div>
                     </div>
                     {this.state.loading === true &&
-                            <div className="loader">
-                                <Loader />
-                            </div>
-                        }
+                        <div className="loader position-loader">
+                            <Loader />
+                        </div>
+                    }
 
                 </div>
 
