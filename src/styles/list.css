@@ -26,7 +26,6 @@ h1 {
 }
 .buttons-container{
     display: flex;
-    position: relative
 }
 .next {
     margin-left: auto;
@@ -43,8 +42,7 @@ h1 {
     justify-content: center;
 }
 .pageNumber {
-    position: absolute;
-    left: 50%
+    margin: auto;
 }
 .position-loader {
     margin: 100px;
