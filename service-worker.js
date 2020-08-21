@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/RickandMorty/precache-manifest.5549b6f8c150948c74c5063e48d6a2a2.js"
+  "/RickandMorty/precache-manifest.17c3fb5f59ea093e62defa0045939ffd.js"
 );
 
 self.addEventListener('message', (event) => {
