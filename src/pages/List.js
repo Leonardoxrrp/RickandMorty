@@ -59,8 +59,12 @@ class List extends Component {
                                 (
                                     <button onClick={() => this.fetchCharacter(0)} className="btn btn-dark previous">Previous Page</button>
                                 )}
-                                
-                                    <p className="pageNumber">Page: {this.state.page}/34</p>
+
+                            {this.state.page > 1 && this.state.page < 34 &&
+                                (
+                                    <p>Page: {this.state.page}/34</p>
+                                )
+                            }
 
                             {this.state.page < 34 &&
                                 (
