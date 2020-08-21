@@ -15,12 +15,12 @@ class List extends Component {
         this.fetchCharacter()
     }
     fetchCharacter = async (type) => {
-        this.typeValue = 1; 
+        this.typeValue = 1;
         if (type === 1) {
-            this.typeValue = this.state.page + 1; 
+            this.typeValue = this.state.page + 1;
         }
         else if (type === 0) {
-            this.typeValue = this.state.page - 1; 
+            this.typeValue = this.state.page - 1;
 
         }
         this.setState({ loading: true })
@@ -43,9 +43,11 @@ class List extends Component {
         return (
             <React.Fragment>
                 <div className="header-container">
-                    <div className="container">
-                        <div className="title">
-                            <h1>Rick and Morty</h1>
+                    <div className="container title">
+                        <div className="row">
+                            <div>
+                                <h1>Rick and Morty</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -57,18 +59,16 @@ class List extends Component {
                                 (
                                     <button onClick={() => this.fetchCharacter(0)} className="btn btn-dark previous">Previous Page</button>
                                 )}
-                                {this.state.page > 1 &&
-                                (
+                                
                                     <p className="pageNumber">Page: {this.state.page}/34</p>
-                                )
-                                }
+
                             {this.state.page < 34 &&
                                 (
                                     <button onClick={() => this.fetchCharacter(1)} className="btn btn-dark next">Next Page</button>
                                 )}
 
                         </div>
-                        <div className="row no-gutters card-container">
+                        <div className="row card-container">
                             {this.state.character.map(character =>
                                 <div className="card col-12 col-md-6 col-lg-4 col-xl-3" key={character.id}>
                                     <img className="card-img-top" src={character.image} alt={character.name} />

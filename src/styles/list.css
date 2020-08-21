@@ -17,33 +17,36 @@
 }
 
 h1 {
+    text-align: right;
     color: white;
     height: 60px;
 }
 .header-container {
     background-color: black;
-    text-align: center;
+}
+.title {
+    display: flex;
+    justify-content: center;
 }
 .buttons-container{
     display: flex;
+    position:relative;
 }
 .next {
     margin-left: auto;
-    margin-right: 12px
 }
 .previous {
     margin-right: auto;
-    margin-left: 12px
-
 }
 .loader {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.pageNumber {
-    margin: auto;
-}
 .position-loader {
     margin: 100px;
+}
+.pageNumber {
+    position: absolute;
+    left: 46%;
 }
