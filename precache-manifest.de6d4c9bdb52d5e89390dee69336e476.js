@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c40ff000acb3ccb63774c7688279cebc",
+    "revision": "139f1c0fbf2d2e1fa91136a0a7e45036",
     "url": "/RickandMorty/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/RickandMorty/static/css/2.b8fb372d.chunk.css"
   },
   {
-    "revision": "cdc413017e71715c311f",
-    "url": "/RickandMorty/static/css/main.b91105c3.chunk.css"
+    "revision": "d182bc0e8410b0f1622b",
+    "url": "/RickandMorty/static/css/main.1acf1f3f.chunk.css"
   },
   {
     "revision": "121ad3af8d8cd23328e5",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/RickandMorty/static/js/2.e13bc443.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cdc413017e71715c311f",
-    "url": "/RickandMorty/static/js/main.f02aa6e5.chunk.js"
+    "revision": "d182bc0e8410b0f1622b",
+    "url": "/RickandMorty/static/js/main.94d1f739.chunk.js"
   },
   {
     "revision": "6d60f9a7c64bac2da021",
