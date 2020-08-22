@@ -10,17 +10,17 @@
     flex-direction: column;
     background-color: black;
 }
-.home-container .title{
-    color: white;
-    border-bottom: 1px solid white;
+.home-container .title-container{
     position: absolute;
     top: 5%;
     left: auto;
 }
+.home-container .title {
+    border-bottom: 1px solid white;
+    color: white;
+}
 .home-container .subtitle{
     color: white;
-    position: absolute;
-    top: 15%;
     left: auto;
 }
 .home-container .btn {   
